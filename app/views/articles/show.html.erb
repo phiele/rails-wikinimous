@@ -1,0 +1,15 @@
+<div class="container col-6">
+  <div class="container d-flex justify-content-between p-0">
+    <h3><%= @article.title %></h3>
+    <div class="actions">
+      <%= link_to edit_article_path do %>
+        <i class="fa-solid fa-pen-to-square pe-1"></i>
+      <% end %>
+      <%= link_to article_path(@article.id), data: {turbo_method: :delete, turbo_confirm: "Delete #{@article.title}?"} do %>
+        <i class="fa-solid fa-trash-can ps-1"></i>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <p><%= @article.content %></p>
+</div>
